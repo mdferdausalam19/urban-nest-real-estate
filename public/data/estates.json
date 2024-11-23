@@ -1,0 +1,104 @@
+[
+  {
+    "id": 1,
+    "image": "/images/single_family_home.jpg",
+    "estate_title": "Modern Single-Family Home",
+    "segment_name": "Residential",
+    "description": "A beautifully designed modern single-family home with spacious interiors and a serene backyard.",
+    "price": "$450,000",
+    "status": "sale",
+    "area": "2500 sq ft",
+    "location": "Sunnyvale, CA",
+    "facilities": [
+      "living room",
+      "swimming pool",
+      "kitchen",
+      "garage",
+      "garden"
+    ]
+  },
+  {
+    "id": 2,
+    "image": "/images/townhouse.jpg",
+    "estate_title": "Luxury Townhouse",
+    "segment_name": "Residential",
+    "description": "A luxury townhouse with multiple levels and premium amenities, perfect for families.",
+    "price": "$350,000",
+    "status": "sale",
+    "area": "1800 sq ft",
+    "location": "Seattle, WA",
+    "facilities": ["living room", "kitchen", "balcony", "gym"]
+  },
+  {
+    "id": 3,
+    "image": "/images/apartment.jpg",
+    "estate_title": "Downtown Apartment",
+    "segment_name": "Residential",
+    "description": "A stylish apartment located in the heart of the city with stunning skyline views.",
+    "price": "$2,500/month",
+    "status": "rent",
+    "area": "1200 sq ft",
+    "location": "New York, NY",
+    "facilities": ["living room", "kitchen", "shared pool", "concierge service"]
+  },
+  {
+    "id": 4,
+    "image": "/images/student_housing.jpg",
+    "estate_title": "Student Housing Unit",
+    "segment_name": "Residential",
+    "description": "Affordable and conveniently located housing for students, close to campus.",
+    "price": "$800/month",
+    "status": "rent",
+    "area": "600 sq ft",
+    "location": "Boston, MA",
+    "facilities": ["living room", "shared kitchen", "study room", "laundry"]
+  },
+  {
+    "id": 5,
+    "image": "/images/senior_community.jpg",
+    "estate_title": "Senior Living Community",
+    "segment_name": "Residential",
+    "description": "Comfortable and safe housing tailored for seniors, offering a vibrant community atmosphere.",
+    "price": "$1,500/month",
+    "status": "rent",
+    "area": "800 sq ft",
+    "location": "Orlando, FL",
+    "facilities": ["living room", "kitchen", "community center", "garden"]
+  },
+  {
+    "id": 6,
+    "image": "/images/vacation_rental.jpg",
+    "estate_title": "Beachside Vacation Rental",
+    "segment_name": "Residential",
+    "description": "A beautiful vacation rental by the beach, perfect for relaxation and family getaways.",
+    "price": "$3,000/week",
+    "status": "rent",
+    "area": "2000 sq ft",
+    "location": "Malibu, CA",
+    "facilities": ["living room", "kitchen", "pool", "beach access"]
+  },
+  {
+    "id": 7,
+    "image": "/images/small_apartment.jpg",
+    "estate_title": "Compact City Apartment",
+    "segment_name": "Residential",
+    "description": "A compact yet functional apartment located in a bustling city area, ideal for singles.",
+    "price": "$1,800/month",
+    "status": "rent",
+    "area": "900 sq ft",
+    "location": "Chicago, IL",
+    "facilities": ["living room", "kitchen", "gym access", "rooftop lounge"]
+  },
+  {
+    "id": 8,
+    "image": "/images/mountain_cabin.jpg",
+    "estate_title": "Mountain Cabin Retreat",
+    "segment_name": "Residential",
+    "description": "A cozy mountain cabin offering stunning views and a serene escape from city life.",
+    "price": "$250,000",
+    "status": "sale",
+    "area": "1500 sq ft",
+    "location": "Aspen, CO",
+    "facilities": ["living room", "kitchen", "fireplace", "deck"]
+  }
+]

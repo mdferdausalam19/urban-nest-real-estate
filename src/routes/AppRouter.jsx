@@ -2,6 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import NotFound from "../pages/notFound/NotFound";
 import Home from "../pages/Home";
+import UpdateProfile from "../pages/UpdateProfile";
+import UserProfile from "../pages/UserProfile";
+import EstateDetails from "../pages/EstateDetails";
 
 export const router = createBrowserRouter(
   [
@@ -12,7 +15,20 @@ export const router = createBrowserRouter(
       children: [
         {
           path: "/",
+          loader: () => fetch("../data/estates.json"),
           element: <Home></Home>,
+        },
+        {
+          path: "/updateProfile",
+          element: <UpdateProfile></UpdateProfile>,
+        },
+        {
+          path: "/userProfile",
+          element: <UserProfile></UserProfile>,
+        },
+        {
+          path: "/estate/:id",
+          element: <EstateDetails></EstateDetails>,
         },
       ],
     },
