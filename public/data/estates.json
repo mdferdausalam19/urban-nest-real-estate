@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "/images/single_family_home.jpg",
+    "image": "/images/single_family_home.webp",
     "estate_title": "Modern Single-Family Home",
     "segment_name": "Residential",
     "description": "A beautifully designed modern single-family home with spacious interiors and a serene backyard.",
@@ -19,7 +19,7 @@
   },
   {
     "id": 2,
-    "image": "/images/townhouse.jpg",
+    "image": "/images/townhouse.webp",
     "estate_title": "Luxury Townhouse",
     "segment_name": "Residential",
     "description": "A luxury townhouse with multiple levels and premium amenities, perfect for families.",
@@ -31,7 +31,7 @@
   },
   {
     "id": 3,
-    "image": "/images/apartment.jpg",
+    "image": "/images/apartment.webp",
     "estate_title": "Downtown Apartment",
     "segment_name": "Residential",
     "description": "A stylish apartment located in the heart of the city with stunning skyline views.",
@@ -43,7 +43,7 @@
   },
   {
     "id": 4,
-    "image": "/images/student_housing.jpg",
+    "image": "/images/student_housing.webp",
     "estate_title": "Student Housing Unit",
     "segment_name": "Residential",
     "description": "Affordable and conveniently located housing for students, close to campus.",
@@ -55,7 +55,7 @@
   },
   {
     "id": 5,
-    "image": "/images/senior_community.jpg",
+    "image": "/images/senior_community.webp",
     "estate_title": "Senior Living Community",
     "segment_name": "Residential",
     "description": "Comfortable and safe housing tailored for seniors, offering a vibrant community atmosphere.",
@@ -67,7 +67,7 @@
   },
   {
     "id": 6,
-    "image": "/images/vacation_rental.jpg",
+    "image": "/images/vacation_rental.webp",
     "estate_title": "Beachside Vacation Rental",
     "segment_name": "Residential",
     "description": "A beautiful vacation rental by the beach, perfect for relaxation and family getaways.",
@@ -79,7 +79,7 @@
   },
   {
     "id": 7,
-    "image": "/images/small_apartment.jpg",
+    "image": "/images/small_apartment.webp",
     "estate_title": "Compact City Apartment",
     "segment_name": "Residential",
     "description": "A compact yet functional apartment located in a bustling city area, ideal for singles.",
@@ -91,7 +91,7 @@
   },
   {
     "id": 8,
-    "image": "/images/mountain_cabin.jpg",
+    "image": "/images/mountain_cabin.webp",
     "estate_title": "Mountain Cabin Retreat",
     "segment_name": "Residential",
     "description": "A cozy mountain cabin offering stunning views and a serene escape from city life.",

@@ -5,6 +5,8 @@ import Home from "../pages/Home";
 import UpdateProfile from "../pages/UpdateProfile";
 import UserProfile from "../pages/UserProfile";
 import EstateDetails from "../pages/EstateDetails";
+import SignIn from "../pages/auth/SignIn";
+import SignUp from "../pages/auth/SignUp";
 
 export const router = createBrowserRouter(
   [
@@ -19,16 +21,24 @@ export const router = createBrowserRouter(
           element: <Home></Home>,
         },
         {
-          path: "/updateProfile",
+          path: "/update-profile",
           element: <UpdateProfile></UpdateProfile>,
         },
         {
-          path: "/userProfile",
+          path: "/user-profile",
           element: <UserProfile></UserProfile>,
         },
         {
           path: "/estate/:id",
           element: <EstateDetails></EstateDetails>,
+        },
+        {
+          path: "/sign-in",
+          element: <SignIn></SignIn>,
+        },
+        {
+          path: "/sign-up",
+          element: <SignUp></SignUp>,
         },
       ],
     },
