@@ -2,8 +2,11 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const SignUp = () => {
+  const [showPass, setShowPass] = useState(true);
   const { createUser } = useAuth();
   const navigate = useNavigate();
 
@@ -15,7 +18,6 @@ const SignUp = () => {
 
   const handleSingUp = (data) => {
     const { email, fullName, image, password } = data;
-    console.log(email, fullName, image, password);
     const uppercaseRegex = /[A-Z]/;
     const lowercaseRegex = /[a-z]/;
     const lengthRegex = /^.{6,}$/;
@@ -95,12 +97,20 @@ const SignUp = () => {
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input
-                  {...register("password", { required: true })}
-                  type="password"
-                  placeholder="Enter a strong password"
-                  className="input input-bordered"
-                />
+                <div className="relative">
+                  <input
+                    {...register("password", { required: true })}
+                    type={showPass ? "password" : "text"}
+                    placeholder="Enter your password"
+                    className="input input-bordered w-full"
+                  />
+                  <span
+                    onClick={() => setShowPass(!showPass)}
+                    className="absolute top-4 right-4 cursor-pointer"
+                  >
+                    {showPass ? <FaEyeSlash /> : <FaEye />}
+                  </span>
+                </div>
                 {errors.password && (
                   <span className="text-sm text-red-500">
                     This field is required

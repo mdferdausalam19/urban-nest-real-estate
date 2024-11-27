@@ -15,18 +15,17 @@ const Header = () => {
   const navLinks = (
     <>
       <li>
-        <NavLink to={"/"}>Home</NavLink>
+        <NavLink className="btn btn-outline" to={"/"}>
+          Home
+        </NavLink>
       </li>
 
       {user && (
-        <>
-          <li>
-            <NavLink to={"/update-profile"}>Update Profile</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/user-profile"}>User Profile</NavLink>
-          </li>
-        </>
+        <li>
+          <NavLink className="btn btn-outline" to={"/update-profile"}>
+            Update Profile
+          </NavLink>
+        </li>
       )}
     </>
   );
@@ -53,7 +52,7 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-4"
             >
               {navLinks}
             </ul>
@@ -63,13 +62,24 @@ const Header = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+          <ul className="menu menu-horizontal px-1 gap-4">{navLinks}</ul>
         </div>
         <div className="navbar-end space-x-3">
           {user ? (
             <>
-              <p className="text-4xl">
-                {user?.profile ? <img src={""} /> : <FaRegUserCircle />}
+              <p
+                className="cursor-pointer tooltip tooltip-left"
+                data-tip={user.displayName}
+              >
+                {user?.photoURL ? (
+                  <img
+                    className="w-10 rounded-full"
+                    src={user.photoURL}
+                    alt="No Photo"
+                  />
+                ) : (
+                  <FaRegUserCircle size={40} />
+                )}
               </p>
               <button onClick={handleSignOut} className="btn">
                 Sign Out

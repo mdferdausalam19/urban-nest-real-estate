@@ -3,10 +3,10 @@ import MainLayout from "../layouts/MainLayout";
 import NotFound from "../pages/notFound/NotFound";
 import Home from "../pages/Home";
 import UpdateProfile from "../pages/UpdateProfile";
-import UserProfile from "../pages/UserProfile";
 import EstateDetails from "../pages/EstateDetails";
 import SignIn from "../pages/auth/SignIn";
 import SignUp from "../pages/auth/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter(
   [
@@ -22,15 +22,19 @@ export const router = createBrowserRouter(
         },
         {
           path: "/update-profile",
-          element: <UpdateProfile></UpdateProfile>,
-        },
-        {
-          path: "/user-profile",
-          element: <UserProfile></UserProfile>,
+          element: (
+            <PrivateRoute>
+              <UpdateProfile></UpdateProfile>
+            </PrivateRoute>
+          ),
         },
         {
           path: "/estate/:id",
-          element: <EstateDetails></EstateDetails>,
+          element: (
+            <PrivateRoute>
+              <EstateDetails></EstateDetails>
+            </PrivateRoute>
+          ),
         },
         {
           path: "/sign-in",

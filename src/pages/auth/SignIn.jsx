@@ -2,8 +2,12 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
+import SocialLogin from "../../components/SocialLogin";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useState } from "react";
 
 const SignIn = () => {
+  const [showPass, setShowPass] = useState(true);
   const { signInUser } = useAuth();
   const navigate = useNavigate();
   const {
@@ -14,14 +18,12 @@ const SignIn = () => {
 
   const handleSignIn = (data) => {
     const { email, password } = data;
-    console.log(email, password);
     signInUser(email, password)
       .then(() => {
         toast.success("Sign in successful! Welcome back!");
         navigate("/");
       })
       .catch((error) => {
-        console.log(error.code);
         if (error.code == "auth/invalid-credential") {
           return toast.error(
             "Invalid credentials. Please check your email and password."
@@ -59,12 +61,20 @@ const SignIn = () => {
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input
-                  {...register("password", { required: true })}
-                  type="password"
-                  placeholder="Enter your password"
-                  className="input input-bordered"
-                />
+                <div className="relative">
+                  <input
+                    {...register("password", { required: true })}
+                    type={showPass ? "password" : "text"}
+                    placeholder="Enter your password"
+                    className="input input-bordered w-full"
+                  />
+                  <span
+                    onClick={() => setShowPass(!showPass)}
+                    className="absolute top-4 right-4 cursor-pointer"
+                  >
+                    {showPass ? <FaEyeSlash /> : <FaEye />}
+                  </span>
+                </div>
                 {errors.password && (
                   <span className="text-sm text-red-500">
                     This field is required
@@ -88,6 +98,12 @@ const SignIn = () => {
                 </p>
               </div>
             </form>
+            <div>
+              <div className="divider">Continue With</div>
+              <div className="text-center mb-8 mt-6">
+                <SocialLogin></SocialLogin>
+              </div>
+            </div>
           </div>
         </div>
       </div>
