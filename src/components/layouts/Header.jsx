@@ -34,18 +34,20 @@ const Header = () => {
           </li>
         </>
       )}
-      <>
-        <li>
-          <NavLink className="btn btn-outline md:hidden" to={"/sign-in"}>
-            Sign In
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className="btn btn-outline md:hidden" to={"/sign-up"}>
-            Sign Up
-          </NavLink>
-        </li>
-      </>
+      {!user && (
+        <>
+          <li>
+            <NavLink className="btn btn-outline md:hidden" to={"/sign-in"}>
+              Sign In
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="btn btn-outline md:hidden" to={"/sign-up"}>
+              Sign Up
+            </NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (

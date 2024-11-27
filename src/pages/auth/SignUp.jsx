@@ -45,7 +45,7 @@ const SignUp = () => {
   };
 
   return (
-    <div>
+    <div className="container mx-auto">
       <Helmet>
         <title>UrbanNest | Sign Up</title>
       </Helmet>
@@ -56,7 +56,7 @@ const SignUp = () => {
               Sign Up Now
             </h1>
           </div>
-          <div className="card border bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+          <div className="card border max-w-sm bg-base-100 w-full shrink-0 shadow-2xl">
             <form onSubmit={handleSubmit(handleSingUp)} className="card-body">
               <div className="form-control">
                 <label className="label">

@@ -38,7 +38,7 @@ const SignIn = () => {
       <Helmet>
         <title>UrbanNest | Sign In</title>
       </Helmet>
-      <div className="hero  rounded-lg p-5">
+      <div className="hero  rounded-lg p-5 container mx-auto">
         <div className="hero-content flex-col">
           <div className="text-center ">
             <h1 className="text-4xl lg:text-5xl font-bold mt-5 mb-3">
