@@ -45,104 +45,100 @@ const SignUp = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="mb-10">
       <Helmet>
         <title>UrbanNest | Sign Up</title>
       </Helmet>
-      <div className="hero  rounded-lg p-5">
-        <div className="hero-content flex-col">
-          <div className="text-center ">
-            <h1 className="text-4xl lg:text-5xl font-bold mt-5 mb-3">
-              Sign Up Now
-            </h1>
+      <div className="text-center ">
+        <h1 className="text-4xl lg:text-5xl font-bold mt-5 mb-3">
+          Sign Up Now
+        </h1>
+      </div>
+      <div className="card max-w-sm border bg-base-100 shrink-0 shadow-2xl mx-auto mt-5">
+        <form onSubmit={handleSubmit(handleSingUp)} className="card-body">
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text text-base">Full Name</span>
+            </label>
+            <input
+              {...register("fullName", { required: true })}
+              type="text"
+              placeholder="Enter your full name"
+              className="input input-bordered"
+            />
+            {errors.fullName && (
+              <span className="text-sm text-red-500">
+                This field is required
+              </span>
+            )}
           </div>
-          <div className="card border max-w-sm bg-base-100 w-full shrink-0 shadow-2xl">
-            <form onSubmit={handleSubmit(handleSingUp)} className="card-body">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-base">Full Name</span>
-                </label>
-                <input
-                  {...register("fullName", { required: true })}
-                  type="text"
-                  placeholder="Enter your full name"
-                  className="input input-bordered"
-                />
-                {errors.fullName && (
-                  <span className="text-sm text-red-500">
-                    This field is required
-                  </span>
-                )}
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-base">Email Address</span>
-                </label>
-                <input
-                  {...register("email", { required: true })}
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="input input-bordered"
-                />
-                {errors.email && (
-                  <span className="text-sm text-red-500">
-                    This field is required
-                  </span>
-                )}
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-base">Profile Photo</span>
-                </label>
-                <input
-                  {...register("image")}
-                  type="text"
-                  placeholder="Enter your photo URL"
-                  className="input input-bordered"
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-base">Password</span>
-                </label>
-                <div className="relative">
-                  <input
-                    {...register("password", { required: true })}
-                    type={showPass ? "password" : "text"}
-                    placeholder="Enter your password"
-                    className="input input-bordered w-full"
-                  />
-                  <span
-                    onClick={() => setShowPass(!showPass)}
-                    className="absolute top-4 right-4 cursor-pointer"
-                  >
-                    {showPass ? <FaEyeSlash /> : <FaEye />}
-                  </span>
-                </div>
-                {errors.password && (
-                  <span className="text-sm text-red-500">
-                    This field is required
-                  </span>
-                )}
-                <p className="text-xs text-gray-500 mt-1">
-                  Password must include at least 6 characters, with one
-                  uppercase letter and one lowercase letter.
-                </p>
-              </div>
-              <div className="form-control mt-6">
-                <button className="btn bg-base-300">Sign Up</button>
-              </div>
-              <div className="mt-2">
-                <p>
-                  Already have an account?{" "}
-                  <span className="italic text-blue-500 hover:underline">
-                    <Link to={"/sign-in"}>Sign In</Link>
-                  </span>
-                </p>
-              </div>
-            </form>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text text-base">Email Address</span>
+            </label>
+            <input
+              {...register("email", { required: true })}
+              type="email"
+              placeholder="Enter your email address"
+              className="input input-bordered"
+            />
+            {errors.email && (
+              <span className="text-sm text-red-500">
+                This field is required
+              </span>
+            )}
           </div>
-        </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text text-base">Profile Photo</span>
+            </label>
+            <input
+              {...register("image")}
+              type="text"
+              placeholder="Enter your photo URL"
+              className="input input-bordered"
+            />
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text text-base">Password</span>
+            </label>
+            <div className="relative">
+              <input
+                {...register("password", { required: true })}
+                type={showPass ? "password" : "text"}
+                placeholder="Enter your password"
+                className="input input-bordered w-full"
+              />
+              <span
+                onClick={() => setShowPass(!showPass)}
+                className="absolute top-4 right-4 cursor-pointer"
+              >
+                {showPass ? <FaEyeSlash /> : <FaEye />}
+              </span>
+            </div>
+            {errors.password && (
+              <span className="text-sm text-red-500">
+                This field is required
+              </span>
+            )}
+            <p className="text-xs text-gray-500 mt-1">
+              Password must include at least 6 characters, with one uppercase
+              letter and one lowercase letter.
+            </p>
+          </div>
+          <div className="form-control mt-6">
+            <button className="btn bg-base-300">Sign Up</button>
+          </div>
+          <div className="mt-2">
+            <p>
+              Already have an account?{" "}
+              <span className="italic text-blue-500 hover:underline">
+                <Link to={"/sign-in"}>Sign In</Link>
+              </span>
+            </p>
+          </div>
+        </form>
       </div>
     </div>
   );
