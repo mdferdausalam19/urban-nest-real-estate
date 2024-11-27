@@ -21,12 +21,31 @@ const Header = () => {
       </li>
 
       {user && (
+        <>
+          <li>
+            <NavLink className="btn btn-outline" to={"/update-profile"}>
+              Update Profile
+            </NavLink>
+          </li>
+          <li className="md:hidden">
+            <button onClick={handleSignOut} className="btn btn-outline">
+              Sign Out
+            </button>
+          </li>
+        </>
+      )}
+      <>
         <li>
-          <NavLink className="btn btn-outline" to={"/update-profile"}>
-            Update Profile
+          <NavLink className="btn btn-outline md:hidden" to={"/sign-in"}>
+            Sign In
           </NavLink>
         </li>
-      )}
+        <li>
+          <NavLink className="btn btn-outline md:hidden" to={"/sign-up"}>
+            Sign Up
+          </NavLink>
+        </li>
+      </>
     </>
   );
   return (
@@ -73,7 +92,7 @@ const Header = () => {
               >
                 {user?.photoURL ? (
                   <img
-                    className="w-10 rounded-full"
+                    className="w-10 rounded-full border border-black"
                     src={user.photoURL}
                     alt="No Photo"
                   />
@@ -81,16 +100,19 @@ const Header = () => {
                   <FaRegUserCircle size={40} />
                 )}
               </p>
-              <button onClick={handleSignOut} className="btn">
+              <button
+                onClick={handleSignOut}
+                className="btn btn-outline hidden md:flex"
+              >
                 Sign Out
               </button>
             </>
           ) : (
             <>
-              <Link to="/sign-in" className="btn">
+              <Link to="/sign-in" className="btn btn-outline hidden md:flex">
                 Sign In
               </Link>
-              <Link to="/sign-up" className="btn">
+              <Link to="/sign-up" className="btn btn-outline hidden md:flex">
                 Sign Up
               </Link>
             </>

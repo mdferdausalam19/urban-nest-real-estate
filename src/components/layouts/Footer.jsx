@@ -49,6 +49,17 @@ const Footer = () => {
             Copyright © {new Date().getFullYear()} - All right reserved by
             UrbanNest
           </p>
+          <p>
+            Developed by{" "}
+            <a
+              href="https://github.com/mdferdausalam19" // Change this to LinkedIn if you prefer
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-blue-500 link link-hover"
+            >
+              Md. Ferdaus Alam
+            </a>
+          </p>
         </aside>
       </footer>
     </div>

@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import SocialLogin from "../../components/SocialLogin";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const SignIn = () => {
   const [showPass, setShowPass] = useState(true);
@@ -34,16 +35,21 @@ const SignIn = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>UrbanNest | Sign In</title>
+      </Helmet>
       <div className="hero  rounded-lg p-5">
         <div className="hero-content flex-col">
           <div className="text-center ">
-            <h1 className="text-5xl font-bold mt-5 mb-3">Sign In Now</h1>
+            <h1 className="text-4xl lg:text-5xl font-bold mt-5 mb-3">
+              Sign In Now
+            </h1>
           </div>
           <div className="card border bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <form onSubmit={handleSubmit(handleSignIn)} className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email Address</span>
+                  <span className="label-text text-base">Email Address</span>
                 </label>
                 <input
                   {...register("email", { required: true })}
@@ -59,7 +65,7 @@ const SignIn = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text text-base">Password</span>
                 </label>
                 <div className="relative">
                   <input
@@ -80,14 +86,9 @@ const SignIn = () => {
                     This field is required
                   </span>
                 )}
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-base-300">Sign In</button>
+                <button className="btn bg-base-300 ">Sign In</button>
               </div>
               <div className="mt-2">
                 <p>

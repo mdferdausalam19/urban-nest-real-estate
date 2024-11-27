@@ -4,10 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const SignUp = () => {
   const [showPass, setShowPass] = useState(true);
-  const { createUser } = useAuth();
+  const { createUser, updateUserProfile } = useAuth();
   const navigate = useNavigate();
 
   const {
@@ -36,23 +37,30 @@ const SignUp = () => {
       );
     }
     createUser(email, password).then(() => {
-      toast.success("Sign up successful! Welcome aboard!");
-      navigate("/");
+      updateUserProfile(fullName, image).then(() => {
+        toast.success("Sign up successful! Welcome aboard!");
+        navigate("/");
+      });
     });
   };
 
   return (
     <div>
+      <Helmet>
+        <title>UrbanNest | Sign Up</title>
+      </Helmet>
       <div className="hero  rounded-lg p-5">
         <div className="hero-content flex-col">
           <div className="text-center ">
-            <h1 className="text-5xl font-bold mt-5 mb-3">Sign Up Now</h1>
+            <h1 className="text-4xl lg:text-5xl font-bold mt-5 mb-3">
+              Sign Up Now
+            </h1>
           </div>
           <div className="card border bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <form onSubmit={handleSubmit(handleSingUp)} className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Full Name</span>
+                  <span className="label-text text-base">Full Name</span>
                 </label>
                 <input
                   {...register("fullName", { required: true })}
@@ -68,7 +76,7 @@ const SignUp = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email Address</span>
+                  <span className="label-text text-base">Email Address</span>
                 </label>
                 <input
                   {...register("email", { required: true })}
@@ -84,7 +92,7 @@ const SignUp = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Profile Photo</span>
+                  <span className="label-text text-base">Profile Photo</span>
                 </label>
                 <input
                   {...register("image")}
@@ -95,7 +103,7 @@ const SignUp = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text text-base">Password</span>
                 </label>
                 <div className="relative">
                   <input
