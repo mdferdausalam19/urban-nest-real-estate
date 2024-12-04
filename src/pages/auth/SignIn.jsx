@@ -39,9 +39,8 @@ const SignIn = () => {
         <title>UrbanNest | Sign In</title>
       </Helmet>
       <div className="text-center ">
-        <h1 className="text-4xl lg:text-5xl font-bold mt-5 mb-3">
-          Sign In Now
-        </h1>
+        <h1 className="text-4xl lg:text-5xl font-bold mt-5 mb-3">Sign In</h1>
+        <p>Welcome Back! Please sign in to continue.</p>
       </div>
       <div className="card max-w-sm border bg-base-100 shrink-0 shadow-2xl mx-auto mt-5">
         <form onSubmit={handleSubmit(handleSignIn)} className="card-body">

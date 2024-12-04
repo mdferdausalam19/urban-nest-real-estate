@@ -50,9 +50,8 @@ const SignUp = () => {
         <title>UrbanNest | Sign Up</title>
       </Helmet>
       <div className="text-center ">
-        <h1 className="text-4xl lg:text-5xl font-bold mt-5 mb-3">
-          Sign Up Now
-        </h1>
+        <h1 className="text-4xl lg:text-5xl font-bold mt-5 mb-3">Sign Up</h1>
+        <p>Join us today to explore new features!</p>
       </div>
       <div className="card max-w-sm border bg-base-100 shrink-0 shadow-2xl mx-auto mt-5">
         <form onSubmit={handleSubmit(handleSingUp)} className="card-body">
